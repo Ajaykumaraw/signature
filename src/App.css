@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Marck+Script&family=Meddon&family=Pacifico&display=swap');
+
+.App {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.sign-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.sign-area{
+  width: 300px;
+  height: 150px;
+  border: 1px solid lightgray;
+}
+/* dialog */
+
+.sign-dialog{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(33 36 44 / 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+}
+
+.sign-dialog-container{
+  width: 80%;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem auto;
+  border-radius: 10px;
+  
+}
+
+.sign-dialog-header{
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  background: #f6f8fa;
+}
+.sign-dialog-content{
+  width: 100%;
+  min-height: 70vh;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.select-color{
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  text-align: right;
+}
+.color-btns{
+  padding-right: 10%;
+  margin-top: 2rem;
+}
+.sign-dialog-footer{
+  width: 100%;
+  min-height: 20vh;
+  background: #f6f8fa;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.draw-section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.draw-container{
+  width: 70%;
+  border: 1px dashed lightblue;
+}
+.sign-here-lable{
+  margin-top: 15px;
+  color: #606671;
+}
+.ReactSketchCanvas{
+  border: none !important;
+}
+
+.sign-dialog-lable{
+ padding-left: 5%;
+ padding-top: 1rem;
+ font-weight: 500;
+}
+.sign-dialog-lable label{
+  padding-top: 1rem;
+ } 
+
+.sign-tab-container{
+  width: 100%;
+  background: #f0f3f9;
+  border-bottom:1px solid #bec9d9;
+  border-top:1px solid #bec9d9;
+
+ }
+ .sign-tab-btn-container{
+  margin-left: 2%;
+  background: #f0f3f9;
+  font-weight: 500; 
+ }
+ .sign-dialog-footer-btn{
+  text-align: right;
+  cursor: pointer;
+  margin: 10px;
+ }
+
+ .sign-tab-btn{
+    padding: 1rem 1.3rem;
+    border: none;
+    background: #f0f3f9;
+    color: #525252;
+    cursor: pointer;
+ }
+ .active-tab::after{
+    content: "";
+    color: #4636e3;
+    height: 1px; 
+ }
+ .sign-tab-btn:hover{
+  padding: 1rem 1.3rem;
+}
+
+
+.sign-tab-btn-footer{
+  padding: .5rem 1rem;
+  margin-right:10px;
+  border: 1px solid rgb(208, 211, 212);
+  background: #F0F3F9;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.sign-tab-btn-footer button{
+  font-weight: 500;
+}
+.text-signature{
+  width: 100%;
+}
+.text-signature-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+   
+}
+.text-signature-field{
+  width: 70%;
+  height: 10vh;
+  border: 1px solid #ffff;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-left: 1px solid #4636e3;
+  border-right: 1px solid #4636e3;
+  border-top:  1px solid #4636e3;
+  font-size: 2rem;
+  text-align: center;
+  outline: none;
+  font-family: 'Pacifico', cursive;
+}
+/* .text-signature-container input{
+  width: 70%;
+  border: 1px solid #ffff;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-left: 1px solid #4636e3;
+  border-right: 1px solid #4636e3;
+  border-top:  1px solid #4636e3;
+  font-size: 2rem;
+  text-align: center;
+  outline: none;
+  font-family: 'Pacifico', cursive;
+} */
+.text-signature-input{
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textCanvas-fonts-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid #d8dfeb;
+  background: #e9eef7;
+}
+.clear-signature-lable{
+  color: #4636e3;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.selete-text-font{
+  width: 100%;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.textCanvas{
+  width: 100%;
+}
+
+.signImage{
+  width: 300px;
+}
+.radio-btn{
+  width: 5px;
+  height: 10px;
+  border: none;
+}
+
+.active-tab{
+  padding: 1rem 1.3rem;
+  border: none;
+  background: #f0f3f9;
+  color: #4636e3;
+  cursor: pointer;
+  border-bottom: 2px solid #4636e3; /* Or whatever color you want */
+  text-decoration: none;
+}
+
+input[type='radio'] {
+  accent-color: #4365c5;
+}
