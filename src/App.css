@@ -80,7 +80,7 @@
   position: relative;
   margin: 1rem auto;
   border-radius: 10px;
-  
+  overflow-y: hidden;
 }
 
 .sign-dialog-header{
@@ -138,11 +138,13 @@
 }
 .ReactSketchCanvas{
   border: none !important;
+  cursor:pointer;
 }
 
 .sign-dialog-lable{
+  font-size: 1.2rem;
  padding-left: 5%;
- padding-top: 1rem;
+ padding-top: 2rem;
  font-weight: 500;
 }
 .sign-dialog-lable label{
@@ -173,6 +175,7 @@
     background: #f0f3f9;
     color: #525252;
     cursor: pointer;
+    font-size: 1rem;
  }
  .active-tab::after{
     content: "";
@@ -185,13 +188,28 @@
 
 
 .sign-tab-btn-footer{
+  width: 10%;
+  height: 7%;
   padding: .5rem 1rem;
   margin-right:10px;
   border: 1px solid rgb(208, 211, 212);
   background: #F0F3F9;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
 }
+
+.sign-tab-btn-footer-disabled{
+  width: 10%;
+  height: 7%;
+  padding: .5rem 1rem;
+  margin-right:10px;
+  border: 1px solid rgb(208, 211, 212);
+  background: #c1bdf3 !important;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
 .sign-tab-btn-footer button{
   font-weight: 500;
 }
@@ -219,21 +237,12 @@
   outline: none;
   font-family: 'Pacifico', cursive;
 }
-/* .text-signature-container input{
-  width: 70%;
-  border: 1px solid #ffff;
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #4636e3;
-  border-right: 1px solid #4636e3;
-  border-top:  1px solid #4636e3;
-  font-size: 2rem;
-  text-align: center;
-  outline: none;
-  font-family: 'Pacifico', cursive;
-} */
+
+
 .text-signature-input{
   width: 100%;
   height: 35vh;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,19 +250,31 @@
 }
 
 .textCanvas-fonts-container{
+  height: 20vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   border: 1px solid #d8dfeb;
   background: #e9eef7;
+  font-size: 2rem;
+}
+.textCanvas-fonts-container:hover{
+  background: #ffff;
 }
 .clear-signature-lable{
   color: #4636e3;
-  margin: 1rem;
+  margin-top: 20px;
   cursor: pointer;
 }
-
+.text-lable{
+  font-size: xx-large;
+  margin-left: 1rem;
+  content: "Signature";
+}
+.text-radio-btn{
+  margin-left: 10px;
+}
 .selete-text-font{
   width: 100%;
   border: none;
@@ -282,8 +303,50 @@
   cursor: pointer;
   border-bottom: 2px solid #4636e3; /* Or whatever color you want */
   text-decoration: none;
+  font-size: 1rem;
 }
 
-input[type='radio'] {
-  accent-color: #4365c5;
+.radio-btn-black{
+  width: 20px;
+  height: 20px;
+  background: black;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.radio-btn-blue{
+  width: 20px;
+  height: 20px;
+  background: rgb(34, 147, 251);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.radio-btn-pink{
+  width: 20px;
+  height: 20px;
+  background: rgb(70, 54, 227);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;  
+}
+
+.active-btn{
+  border: 2px solid #ffffff;
+  outline: 5px solid rgb(70, 54, 227);
+}
+.hideSignature{
+  visibility: hidden;
+}
+
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #c1bdf3;
+  color: #fff;
 }

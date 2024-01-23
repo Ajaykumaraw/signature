@@ -14,7 +14,7 @@ function Signature() {
     <div className='sign-container'>
         <div className='sign-area'>
             <div className='sign-button'><button onClick={()=> setOpen(true)}>sign</button></div>
-           {(open)?"":<img className='signImage' src={Signature} />} 
+           {(open)?"":<img draggable="true" className='signImage' src={Signature} />} 
         </div>
         {(open)? <Dialog setOpen={setOpen} 
              activeComponent={activeComponent}
