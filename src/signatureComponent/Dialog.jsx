@@ -17,7 +17,7 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
   const pathObjectd = {"drawMode":true,"paths":[],"strokeColor":"blue","strokeWidth":4}
 
  
-
+  //save imag
   const donebtn = ()=>{
     setOpen(false)
   }
@@ -27,6 +27,7 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
     setOpen(false)
   }
 
+  // color selection method
   const setSignColor = (e,selectedColor)=>{
     e.preventDefault()
     setColor(selectedColor)

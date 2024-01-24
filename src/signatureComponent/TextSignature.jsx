@@ -9,6 +9,7 @@ function TextSignature({setSignature,Signature,color,setTs,ts,settextEdited}) {
 
   let ctx;
   let canvasElement;
+  let fontsize =30;
 
   useEffect(()=>{
      canvasElement = textSignatureRef.current;
@@ -16,8 +17,13 @@ function TextSignature({setSignature,Signature,color,setTs,ts,settextEdited}) {
      ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
      ctx.moveTo(0, 0);
      ctx.reset();
-     ctx.font = `30px ${font}`;
+    // ctx.font = `${fontsize}px ${font}`;
      ctx.fillStyle = color;
+     do {
+      fontsize--;
+      ctx.font = fontsize + "px " + font;
+    } while (ctx.measureText(ts).width > canvasElement.width)
+  
      ctx.fillText(ts, 10, 60)
      setSignature(canvasElement.toDataURL())
   })
@@ -57,7 +63,7 @@ function TextSignature({setSignature,Signature,color,setTs,ts,settextEdited}) {
                <input className='text-signature-field' type='text' onChange={(e)=>setTss(e.target.value)}
                 style={{fontFamily:`${font}`,color:`${color}`}}  placeholder="Signature"  ref={textInput} />
                <div className='clear-signature-lable' onClick={()=> clearSignature()}><label>Clear Signature</label></div>
-               <canvas className='hideSignature' ref={textSignatureRef} id="myCanvas" width={300} height={100} /> 
+               <canvas className='canvasSignature' ref={textSignatureRef} id="myCanvas" height={100} /> 
             </div>
             <div className='selete-text-font' onChange={(e)=>setFonts(e.target.value)}>
               <div className='textCanvas-fonts-container' >

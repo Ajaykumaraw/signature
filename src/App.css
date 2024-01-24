@@ -253,6 +253,7 @@
 }
 
 .textCanvas-fonts-container{
+  min-width: 48%;
   height: 20vh;
   display: flex;
   align-items: center;
@@ -261,6 +262,7 @@
   border: 1px solid #d8dfeb;
   background: #e9eef7;
   font-size: 2rem;
+  flex-grow: 2;
 }
 .textCanvas-fonts-container:hover{
   background: #ffff;
@@ -278,13 +280,16 @@
 .text-radio-btn{
   margin-left: 10px;
 }
+
+/* font selection */
 .selete-text-font{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
-  border: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  
 }
+
+/* font selection */
 .textCanvas{
   width: 100%;
 }
@@ -344,7 +349,7 @@
   border: 2px solid #ffffff;
   outline: 5px solid rgb(70, 54, 227);
 }
-.hideSignature{
+.canvasSignature{
   visibility: hidden;
 }
 
