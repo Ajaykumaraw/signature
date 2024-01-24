@@ -20,13 +20,8 @@ function Draw({setSignature,color,mouseEdited,setmouseEdited,canvasref,setCanvas
   }
  
   const updateCanvasPath=(path)=>{
-    console.log(path)
     setCanvasPath(prevArray => [...prevArray, path]);
-   // pathObject.paths.push(inPath) 
    CanvasPath.map((item)=> item.strokeColor = color)
-    console.log("in path",inPath)
-    //setCanvasPath(inPath)
-    console.log("canvasPath:",CanvasPath)
   }
 
 
@@ -40,7 +35,6 @@ function Draw({setSignature,color,mouseEdited,setmouseEdited,canvasref,setCanvas
             strokeWidth={4}
             strokeColor={color || "black"} 
             onStroke={(path)=> updateCanvasPath(path)}
-           // onStroke={(path)=> console.log(path)}
             onChange={()=>{ 
              canvasref.current.exportImage("png")
             .then(data => {
