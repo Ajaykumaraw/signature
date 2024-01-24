@@ -237,6 +237,9 @@
   outline: none;
   font-family: 'Pacifico', cursive;
 }
+.text-signature-field::placeholder{
+  color: black;
+}
 
 
 .text-signature-input{
@@ -350,3 +353,5 @@ button[disabled]{
   background-color: #c1bdf3;
   color: #fff;
 }
+
+

@@ -4,11 +4,15 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
 
 function Draw({setSignature,color,mouseEdited,setmouseEdited,canvasref,setCanvasPath,CanvasPath}) {
 
-  
+  const [inPath,setInPath] = useState([])
+  const pathObject = {"drawMode":true,"paths":[],"strokeColor":"blue","strokeWidth":4}
+  let pathArray = [];
 
   const clearCanvas = ()=>{
     canvasref.current.clearCanvas();
     setmouseEdited(true)  
+    setCanvasPath([])
+    setInPath([])
   }
 
   const mouseDownHandler=()=>{
@@ -16,15 +20,15 @@ function Draw({setSignature,color,mouseEdited,setmouseEdited,canvasref,setCanvas
   }
  
   const updateCanvasPath=(path)=>{
-    console.log("Paths",path.paths)
-   // const pathArray = [...CanvasPath.paths];
-    
-    // const completePath = [[CanvasPath.paths],[...path.paths]];
-    // console.log(completePath)
-    console.log(path.paths)
-    setCanvasPath(path.paths)
-   // setCanvasPath(CanvasPath=> [...CanvasPath.paths,[...path.paths]] );
+    console.log(path)
+    setCanvasPath(prevArray => [...prevArray, path]);
+   // pathObject.paths.push(inPath) 
+   CanvasPath.map((item)=> item.strokeColor = color)
+    console.log("in path",inPath)
+    //setCanvasPath(inPath)
+    console.log("canvasPath:",CanvasPath)
   }
+
 
 
 
@@ -34,7 +38,7 @@ function Draw({setSignature,color,mouseEdited,setmouseEdited,canvasref,setCanvas
          <ReactSketchCanvas className='ReactSketchCanvas'
             ref={canvasref}
             strokeWidth={4}
-            strokeColor={color || "black"}
+            strokeColor={color || "black"} 
             onStroke={(path)=> updateCanvasPath(path)}
            // onStroke={(path)=> console.log(path)}
             onChange={()=>{ 

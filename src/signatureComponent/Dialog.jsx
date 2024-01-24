@@ -12,7 +12,10 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
   const [ts,setTs] = useState("Signature");
   const [textEdited,settextEdited] = useState(true)
   const [mouseEdited,setmouseEdited] = useState(true)
-  const [CanvasPath,setCanvasPath] = useState()
+  const [CanvasPath,setCanvasPath] = useState([])
+
+  const pathObjectd = {"drawMode":true,"paths":[],"strokeColor":"blue","strokeWidth":4}
+
  
 
   const donebtn = ()=>{
@@ -24,17 +27,22 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
     setOpen(false)
   }
 
-  const setSignColor = (selectedColor)=>{
+  const setSignColor = (e,selectedColor)=>{
+    e.preventDefault()
     setColor(selectedColor)
     if(activeComponent === "Draw"){
       canvasref.current.clearCanvas();
-      CanvasPath.strokeColor = selectedColor;
-      canvasref.current.loadPaths(CanvasPath)
-      // setmouseEdited(true)  
+     // CanvasPath.strokeColor = selectedColor;
+      let p = CanvasPath;
+      p.map((item)=> item.strokeColor = selectedColor)
+      console.log(p)
+      p.map((item)=>  canvasref.current.loadPaths(item))
+    }
+  
     }
    
 
-  }
+  
   
 
   return (
@@ -52,9 +60,9 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
             <div className='sign-dialog-content'>
                 <div className='select-color' >
                   <div className='color-btns' onChange={(e)=>{setSignColor(e)}}>
-                    <button  className={`radio-btn-black ${(color=="black")?"active-btn":""}`} onClick={()=>{ setSignColor("black")}}></button>
-                    <button  className={`radio-btn-blue ${(color=="rgb(34, 147, 251)")?"active-btn":""}`} onClick={()=>{setSignColor("rgb(34, 147, 251)")}}></button>
-                    <button  className={`radio-btn-pink ${(color=="rgb(70, 54, 227)")?"active-btn":""}`} onClick={()=>{setSignColor("rgb(70, 54, 227)")}}></button>
+                    <button  className={`radio-btn-black ${(color=="black")?"active-btn":""}`} onClick={(e)=>{ setSignColor(e,"black")}}></button>
+                    <button  className={`radio-btn-blue ${(color=="rgb(34, 147, 251)")?"active-btn":""}`} onClick={(e)=>{setSignColor(e,"rgb(34, 147, 251)")}}></button>
+                    <button  className={`radio-btn-pink ${(color=="rgb(70, 54, 227)")?"active-btn":""}`} onClick={(e)=>{setSignColor(e,"rgb(70, 54, 227)")}}></button>
                   </div>
                 </div>
                 {(activeComponent === "Draw" )? <Draw Signature={Signature} 

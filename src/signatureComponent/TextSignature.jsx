@@ -55,7 +55,7 @@ function TextSignature({setSignature,Signature,color,setTs,ts,settextEdited}) {
           <div className='text-signature-container'>
             <div className='text-signature-input'>
                <input className='text-signature-field' type='text' onChange={(e)=>setTss(e.target.value)}
-                style={{fontFamily:`${font}`,color:`${color}`}}  placeholder="Signature"  ref={textInput}/>
+                style={{fontFamily:`${font}`,color:`${color}`}}  placeholder="Signature"  ref={textInput} />
                <div className='clear-signature-lable' onClick={()=> clearSignature()}><label>Clear Signature</label></div>
                <canvas className='hideSignature' ref={textSignatureRef} id="myCanvas" width={300} height={100} /> 
             </div>
