@@ -82,7 +82,8 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
             <div className='sign-dialog-footer'>
                <div className='sign-dialog-footer-btn'>
                     <button className='sign-tab-btn-footer' onClick={()=> cancelbtn()}>Cancel</button>
-                    {(activeComponent === "Draw")?<button disabled={mouseEdited} className={`${mouseEdited?"sign-tab-btn-footer-disabled" :"sign-tab-btn-footer"}`}
+                    {(activeComponent === "Draw")?
+                    <button disabled={mouseEdited} className={`${mouseEdited?"sign-tab-btn-footer-disabled" :"sign-tab-btn-footer"}`}
                       style={{background:"#4636e3",color:'white'}} onClick={()=>donebtn()}>Done</button>:
                     <button disabled={textEdited}  className={`${textEdited?"sign-tab-btn-footer-disabled" :"sign-tab-btn-footer"}`}
                       style={{background:"#4636e3",color:'white'}} onClick={()=>donebtn()}>Done</button>}
@@ -94,4 +95,3 @@ function Dialog({setOpen,activeComponent,setActiveComponent,setSignature,Signatu
 }
 
 export default Dialog
-// className={`${edited?"sign-tab-btn-footer":"sign-tab-btn-footer-disabled"}`}

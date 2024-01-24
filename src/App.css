@@ -263,6 +263,7 @@
   background: #e9eef7;
   font-size: 2rem;
   flex-grow: 2;
+  text-overflow: ellipsis;
 }
 .textCanvas-fonts-container:hover{
   background: #ffff;
@@ -343,6 +344,22 @@
   border-radius: 50%;
   margin-right: 10px;
   cursor: pointer;  
+}
+
+.text-radio-btn{
+  width: 20px;
+  height: 20px;
+  background: rgb(234, 234, 238);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;  
+}
+.text-radio-btn-active{
+  border: 2px solid #ffffff;
+  background: rgb(70, 54, 227);
+  outline: 2px solid rgb(197, 196, 201);
 }
 
 .active-btn{

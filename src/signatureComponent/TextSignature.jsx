@@ -66,20 +66,21 @@ function TextSignature({setSignature,Signature,color,setTs,ts,settextEdited}) {
                <canvas className='canvasSignature' ref={textSignatureRef} id="myCanvas" height={100} /> 
             </div>
             <div className='selete-text-font' onChange={(e)=>setFonts(e.target.value)}>
-              <div className='textCanvas-fonts-container' >
-                <input type='radio' className='text-radio-btn' width={"10px"} name="font-family" value="Caveat" defaultChecked/>
+              <div className='textCanvas-fonts-container' onClick={(e)=>setFonts("Caveat")}>
+                <button  className={`text-radio-btn ${(font=="Caveat")?"text-radio-btn-active":""}`}></button>
+                {/* <input type='radio' className='text-radio-btn' width={"10px"} name="font-family" value="Caveat" defaultChecked/> */}
                 <label className='text-lable'  placeholder="Signature" style={{color:`${color}`,fontFamily:"Caveat"}}>{lable}</label>
               </div>
-              <div className='textCanvas-fonts-container' >
-                <input type='radio'  className='text-radio-btn' width={"10px"} name="font-family" value="Pacifico"/>
+              <div className='textCanvas-fonts-container' onClick={(e)=>setFonts("Pacifico")}>
+                <button  className={`text-radio-btn ${(font=="Pacifico")?"text-radio-btn-active":""}`}></button>
                 <label className='text-lable' style={{color:`${color}`,fontFamily:"Pacifico"}}>{lable}</label>
               </div>
-              <div className='textCanvas-fonts-container'>
-                <input type='radio'  className='text-radio-btn' width={"10px"} name="font-family"  value="Marck Script"/>
+              <div className='textCanvas-fonts-container' onClick={(e)=>setFonts("Marck Script")}>
+                <button  className={`text-radio-btn ${(font=="Marck Script")?"text-radio-btn-active":""}`}></button>
                 <label className='text-lable' style={{color:`${color}`,fontFamily:"Marck Script"}}>{lable}</label>
               </div>
-              <div className='textCanvas-fonts-container'>
-                <input type='radio'  className='text-radio-btn' width={"10px"} name="font-family"  value="Meddon"/>
+              <div className='textCanvas-fonts-container' onClick={(e)=>setFonts("Meddon")}>
+                <button  className={`text-radio-btn ${(font=="Meddon")?"text-radio-btn-active":""}`}></button>
                 <label className='text-lable' style={{color:`${color}`,fontFamily:"Meddon"}}>{lable}</label>
               </div>
             </div>
